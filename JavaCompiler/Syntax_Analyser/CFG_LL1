@@ -1,0 +1,192 @@
+START-> public class id co BODY10 cc BODY11.
+BODY10-> MAIN BODY13.
+BODY11-> public BODY12
+       | ABSTRACTCLASS BODY11 
+       | BODY12 
+       | AM4 class id PARENT co BODY cc BODY11
+       | .
+BODY12-> interface id co BODY5 cc BODY11
+       | class id PARENT co BODY cc BODY11.
+BODY13-> public BODY15
+       | BODY15
+       | NAC BODY13
+       | AM4 ST class id PARENT co BODY cc BODY13
+       | .
+BODY15-> interface id co BODY5 cc BODY13
+       | ST class id PARENT co BODY cc BODY13.
+AM4-> private
+    | protected.
+TOPCLASS-> AM class id PARENT co BODY cc.
+
+BODY-> PS BODY2 
+     | id BODY14 BODY.
+BODY14-> eq new id FUNCT sc
+       | X12.
+BODY2-> dt BODY3
+      | NESTEDCLASS BODY
+      | void X12 BODY.
+BODY3-> id BODY4
+      | ARRDEC BODY.
+BODY4-> ro Y1 rc co B1 cc BODY
+      | INIT LIST BODY.
+PARENT-> extends id 
+       | implements id
+       | .
+PS-> AM ST.
+NESTEDCLASS-> class id PARENT co BODY cc.
+NAC-> abstract PS class id PARENT co BODY cc.
+INTERFACE-> AM2 interface id co BODY5 cc.
+AM2-> public
+    | .
+BODY5-> PS BODY6 
+      | OBJDEC BODY5.
+BODY6-> dt BODY7
+      | NESTEDCLASS BODY5.
+BODY7-> id BODY8
+      | ARRDEC BODY5.
+BODY8-> ro Y1 rc sc BODY5 
+      | INIT LIST BODY5.
+ABSTRACTCLASS-> abstract AM2 class id co BODY9 cc.
+BODY9-> PS BODY2
+      | OBJDEC BODY9.
+MAIN-> public static void main ro string sqo sqc args rc co MLS cc.
+MLS-> SLS MLS 
+    | .
+SLS-> WHILEST
+    | FORST
+    | IF
+    | TRYCTH
+    | id X15 sc
+    | INCDEC sc
+    | dt X14 sc.
+X14-> VARDEC 
+    | ARRDEC.
+X15-> P1A X15A
+    | OBJDEC.
+X15A-> X13 
+     | X10 SPECIALEXP sc.
+OBJDEC-> id eq new id FUNCT sc. 
+INCDEC-> X13 P1.
+INCDEC2-> P1 X13.
+X13-> pp 
+    | mm.
+FDEC-> AM ST RTYPE.
+AM -> private
+     | public
+      | protected
+     | .
+ST-> static
+   | .
+RTYPE-> dt X11
+      | void X12.
+X11-> id ro Y1 rc co B1 cc.
+Y1-> dt id Y2
+   | .
+Y2-> comma dt id Y2 
+   | .
+B1-> B1A return SPECIALEXP sc.
+B1A-> SLS2 B1A
+    | dt B1B B1A
+     | AM3 ST RTYPE B1A
+     | static RTYPE B1A 
+     | viod X12 B1A
+    | .
+X12-> id ro Y1 rc co B1A cc.
+B1B -> id B1C 
+     | ARRAYDEC.
+B1C -> ro Y1 rc co B1 cc 
+    | INIT LIST sc.
+SLS2 -> WHILEST
+    | FORST
+    | IF
+    | TRYCTH
+    | id X15 sc
+    | INCDEC sc.
+FOR -> for ro INIT3 CONDX sc INCDEC3 rc co MLS cc.
+INIT3 -> dt VARDEC
+     | VARDEC
+     | sc.
+CONDX -> SPECIALEXP OPERATORS SPECIALEXP
+      | .
+OPERATORS -> ror 
+      | eq eq 
+      | not eq.
+INCDEC3 -> INCDEC 
+      | id COND4
+      | .
+COND4 -> X13 
+      | eq PMX.
+
+COND2 -> P1 eq PMX.
+IF -> if ro CONDX rc co MLS cc ELSE.
+ELSE -> else X17 
+      | .
+X17 -> co MLS cc 
+      | IF.
+TRYCTH -> try co MLS cc catch ro X18 rc co MLS cc finally co MLS cc.
+X18 -> exception id.
+WHILE -> while co CONDX cc ro MLS rc.
+SPECIALEXP -> AND SE2.
+SE2 -> or AND SE2 
+     | .
+AND -> PM AND2.
+AND2 -> and PM AND2 
+      | .
+PM -> MDM PM2.
+PM2 -> pm MDM PM2
+     | .
+MDM -> F MDM2.
+MDM2 -> mdm F MDM2
+      | .
+F -> INCDEC 
+     | const
+     | ro SPECIALEXP rc 
+     | id P1B F2.
+F2 -> X13
+     | .
+PMX -> MDMX PM2X.
+PM2X -> pm MDMX PM2X
+     | .
+MDMX -> F MDM2X.
+MDM2X -> mdm FX MDM2X
+      | .
+FX -> INCDEC 
+     | const
+     | ro PMX rc 
+     | id P1A.
+VARDEC -> id INIT LIST.
+INIT -> eq INIT2 
+      | .
+INIT2 -> SPECIALEXP.
+LIST -> comma id INIT LIST 
+     | sc.
+FULLEXP -> P1A X10 SPECIALEXP sc.
+X10 -> eq X10A.
+X10A-> P1 X10.
+ARRAYDEC -> sqo sqc id eq X1 sc.
+X1 -> new dt sqo SPECIALEXP sqc
+     | co X2 cc.
+X2 -> SPECIALEXP X3.
+X3 -> comma SPECIALEXP 
+     | .
+ARR -> sqo SPECIALEXP sqc.
+FUNCT -> ro X4 rc.
+X4 -> SPECIALEXP X5
+    | .
+X5 -> comma SPECIALEXP X5
+    | .
+P1 -> id P1B.
+P1B->  P1A
+    | .
+P1A -> FUNCT X6 
+     | ARR X7 
+    |dot P1.
+X6 -> dot P1
+     | sqo SPECIALEXP sqc X7.
+X7 -> dot P1
+    | .
+P2-> this dot P1
+   | super dot P1.
+P3-> P2
+   | P1.
+  

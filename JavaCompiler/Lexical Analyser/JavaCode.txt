@@ -1,0 +1,51 @@
+/*Void Main((a<<b==c!=d)
+{{
+while(a.b.c.d!=75+=65&&b.x.7xd*/
+//a<<<==b!!==65.75.ab5c.5bc66.786
+//a+=***//a=b=c
+//string str+="abcd*==65\"abcd+=56"+5
+//char ch='\\n'+'+='\"'+ '''r 
+// mutiline shi krna he
+//a
+//a.b
+//a[]
+//a.b[]
+//a()m,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;''';'
+//a.b()
+//.b().x[].AMPLIFIER().a=544484;
+/*adwfiojakasjpd
+sjkdhs*/
+//;int{,
+//(a+bc*x)&&((y*(95+alfa*gama))||(bingo + tringo))
+//bingo=a.fn(abc,a+b,adeel+vpn,33434).fn((a+bc*x)&&((y*(95+alfa*gama))||(bingo + tringo)));
+//string String main Main public private protected int void static class { }
+//return int static void mango if try ++ --
+//= ,
+//public void a(){}
+//animal cow=new animal(color,height);
+/*
+public static void main(String []args){
+for(a=22;a>20;a--){
+if(a==21){
+a=22;
+}}
+while(b>c){
+}}*/
+public class car{
+public static void main(String []args){
+for(a=22;a>20;a--){
+if(a==21){
+a=22;
+}}
+while(b>c){
+}}
+int door(String color,int type){return x;}
+class door{}
+int xyc=abc=5;
+int[] adeel=new int[abc%2+56];
+}
+interface Animal {
+  public void animalSound(); // interface method (does not have a body)
+  public void sleep(); // interface method (does not have a body)
+}
+mangobaaz1
